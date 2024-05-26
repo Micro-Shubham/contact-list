@@ -41,6 +41,10 @@ h1 {
     border:none;
     
 }
+.add:hover{
+    cursor:pointer;
+    transform: scale(1.5);
+}
 .form {
     background-color: grey;
     height:400px;
@@ -76,13 +80,15 @@ background-color:white;
  color:black;
  font-size: 30px;
  padding:10px;
- margin:70px 50px 0px 80px;
+ margin:70px 100px 0px 100px;
  border-radius:50px;
  border:none;
  
 }
 
 .done:hover {
-    background-color:rgb(12, 21, 15);
-    color:white;
+    transform: scale(1.5) ;
+    cursor: pointer;
+
+
 }
