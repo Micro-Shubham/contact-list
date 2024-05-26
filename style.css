@@ -41,5 +41,48 @@ h1 {
     border:none;
     
 }
+.form {
+    background-color: grey;
+    height:400px;
+    width: 400px;
+    display: flex;
+    margin:0px;
+    padding:0px;
+    border-radius: 40px;
+    /* display: none; */
+}
+.create-contact {
+    display: flex;
+    flex-direction: column;
+    
+}
 
+.name {
+    margin:30px 10px 10px 50px;
+    padding: 20px;
+    font-size: medium;
+    border-radius: 20px;
+    border:none;
+}
+.number {
+  margin:10px 10px 0px 50px;
+  padding:20px;
+  font-size: medium;
+  border-radius: 20px;
+  border:none;
+}
+.done{
+background-color:white;
+ color:black;
+ font-size: 30px;
+ padding:10px;
+ margin:70px 50px 0px 80px;
+ border-radius:50px;
+ border:none;
+ 
+}
 
+.done:hover {
+    background-color:rgb(12, 21, 15);
+    color:white;
+}
