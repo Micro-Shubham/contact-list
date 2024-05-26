@@ -1,7 +1,12 @@
 body {
-    background-color:aquamarine;
+    background-color:rgb(9, 35, 66);
+    
 }
-
+h1 {
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 50px;
+}
 .main {
     display: flex;
     justify-content: center;
