@@ -47,13 +47,14 @@ h1 {
 }
 .form {
     background-color: grey;
-    height:400px;
-    width: 400px;
+    position: top;
+    height:300px;
+    width: 300px;
     display: flex;
     margin:0px;
     padding:0px;
     border-radius: 40px;
-    display: none;
+    /* display: ; */
 }
 .create-contact {
     display: flex;
@@ -62,14 +63,14 @@ h1 {
 }
 
 .name {
-    margin:30px 10px 10px 50px;
+    margin:30px 10px 10px 20px;
     padding: 20px;
     font-size: medium;
     border-radius: 20px;
     border:none;
 }
 .number {
-  margin:10px 10px 0px 50px;
+  margin:10px 10px 0px 20px;
   padding:20px;
   font-size: medium;
   border-radius: 20px;
@@ -93,8 +94,8 @@ background-color:white;
 
 }
 #container {
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 300px;
     background-color: white;
     overflow-y: scroll; /* This adds the vertical scrollbar */
     padding: 10px;

@@ -9,14 +9,14 @@ let form = document.getElementById("create-contact");
 let itemList = [
    
 ]
-add.addEventListener('click', () => {
-    if(form.style.display ==='none' || form.style.display === ' ') {
-        form.style.display = 'block'
-    } else {
-        form.style.display = 'none';
-    }
-})
-
+// please check the  error in below code
+// add.addEventListener('click', () => {
+//     if(form.style.display ==='none' || form.style.display === ' ') {
+//         form.style.display = 'block'
+//     } else {
+//         form.style.display = 'none';
+//     }
+// })
 submit.addEventListener('click', () => {
  mobileNum.innerHTML = ""
  let newNam = nam.value
