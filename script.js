@@ -34,7 +34,23 @@ function newContact(title, id) {
         id:id
     }
     itemList.push(object);
-    render(itemList);
+    sorted(itemList);
+}
+
+// sorting all the data
+function sorted (item) {
+   item.sort((a,b) => {
+    let titleA = a.title.toUpperCase();
+    let titleB = b.title.toUpperCase();
+    if(titleA <titleB) {
+        return -1;
+    }
+    if(titleA >titleB) {
+        return 1;
+    }
+    return 0;
+   });
+   render(itemList);
 }
 
 //rendering the contact list
