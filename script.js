@@ -4,16 +4,23 @@ let container = document.getElementById("container");
 let nam = document.getElementById("name");
 let mobileNum = document.getElementById("number");
 let submit = document.getElementById("done")
-
+let form = document.getElementById("create-contact");
 // array for storaing data
 let itemList = [
    
 ]
+add.addEventListener('click', () => {
+    if(form.style.display ==='none' || form.style.display === ' ') {
+        form.style.display = 'block'
+    } else {
+        form.style.display = 'none';
+    }
+})
 
 submit.addEventListener('click', () => {
  mobileNum.innerHTML = ""
  let newNam = nam.value
- let numb = Number( mobileNum.value);
+ let numb = mobileNum.value;
  newContact(newNam, numb);
  nam.value = ""
  mobileNum.value = ""
