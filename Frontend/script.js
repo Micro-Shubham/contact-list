@@ -72,3 +72,8 @@ const filteredItem = itemList.filter(item =>item.title.toUpperCase().includes(in
 render(filteredItem);
   
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('input').addEventListener('keyup', searchTitles);
+});
