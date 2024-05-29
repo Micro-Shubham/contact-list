@@ -1,4 +1,3 @@
-let input = document.getElementById("input");
 let add = document.getElementById("add");
 let container = document.getElementById("container");
 let nam = document.getElementById("name");
@@ -64,4 +63,12 @@ function render(list) {
     container.appendChild(ptag);
     container.appendChild(pnumber);
   });
+}
+
+//searching contact 
+function  searchTitles () {
+let input = document.getElementById("input").value.toUpperCase();
+const filteredItem = itemList.filter(item =>item.title.toUpperCase().includes(input));
+render(filteredItem);
+  
 }
