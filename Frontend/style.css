@@ -1,103 +1,171 @@
-body {
-    background-color:rgb(9, 35, 66);
-    
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
 }
+
+body {
+    background-color: rgb(9, 35, 66);
+    height: 100vh;
+    position: relative;
+}
+
 h1 {
     color: white;
-    font-family:'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     font-size: 50px;
 }
+
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .box {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .input {
-    width:400px;
-    height: 30px;
-    padding:10px;
-    margin:20px;
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    margin: 20px;
     font-size: 20px;
     text-align: center;
-    border-radius: 20px;
-    border:none;
+    border-radius: 7px;
+    border: none;
+}
+
+.clear-input {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    cursor: pointer;
 }
 
 .add {
-    width:50px;
+    width: 50px;
     height: 50px;
-    padding:5px;
+    padding: 5px;
     font-size: 30px;
     align-items: center;
     border-radius: 30px;
-    border:none;
-    margin:20px;
-    
+    border: none;
+    margin: 20px;
 }
-.add:hover{
-    cursor:pointer;
+
+.add:hover {
+    cursor: pointer;
     transform: scale(1.5);
 }
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    display: none;
+    background: rgb(255, 255, 0, 0);
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.hide {
+    display: block;
+}
+
 .form {
     background-color: grey;
     position: top;
-    height:300px;
+    height: 300px;
     width: 300px;
     display: flex;
-    margin:0px;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
     border-radius: 40px;
-    /* display: ; */
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
 }
+
 .create-contact {
     display: flex;
     flex-direction: column;
-    
 }
 
 .name {
-    margin:30px 10px 10px 20px;
+    margin: 30px 10px 10px 20px;
     padding: 20px;
     font-size: medium;
     border-radius: 20px;
-    border:none;
+    border: none;
 }
+
 .number {
-  margin:10px 10px 0px 20px;
-  padding:20px;
-  font-size: medium;
-  border-radius: 20px;
-  border:none;
+    margin: 10px 10px 0px 20px;
+    padding: 20px;
+    font-size: medium;
+    border-radius: 20px;
+    border: none;
 }
-.done{
-background-color:white;
- color:black;
- font-size: 30px;
- padding:10px;
- margin:70px 100px 0px 100px;
- border-radius:50px;
- border:none;
- 
+
+.done {
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+    margin: 70px 100px 0px 100px;
+    border-radius: 50px;
+    border: none;
 }
 
 .done:hover {
-    transform: scale(1.5) ;
+    transform: scale(1.5);
     cursor: pointer;
-
-
 }
+
+.card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.card .card-photo {
+    height: 100px;
+    width: 100px;
+    background: crimson;
+    border-radius: 100%;
+}
+
+.card .card-details div {
+    margin: 10px;
+}
+
+.card .card-details .card-details-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 #container {
     width: 400px;
-    height: 300px;
+    height: 500px;
     background-color: white;
-    overflow-y: scroll; /* This adds the vertical scrollbar */
-    padding: 10px;
-  }
+    overflow-y: scroll;
+    /* This adds the vertical scrollbar */
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: scroll;
+}

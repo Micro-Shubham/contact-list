@@ -1,28 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact List</title>
-  <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="main">
-        <h1> Contact</h1>
-      <div class="box">
-        <input id="input" class="input" type="text" placeholder="Search contact name"  />
-        <button id="add" class="add">+</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="main">
+    <h1>Contact</h1>
+    <div class="box">
+      <div>
+        <input id="input" class="input" type="text" placeholder="Search contact name" />
+        <span class="clear-input">X</span>
       </div>
-      <div class="container" id="container"></div>
+      <button id="add" class="add">+</button>
     </div>
+    <div class="container" id="container">
+      <!--<div class="card">-->
+      <!--  <div class="card-photo"></div>-->
+      <!--  <div class="card-details">-->
+      <!--    <div class="card-details-name">Rishav Raj</div>-->
+      <!--    <div class="card-details-number">+91 9204457370</div>-->
+      <!--  </div>-->
+      <!--</div>-->
+    </div>
+  </div>
+  <div class="overlay">
     <div class="form">
-        <div class="create-contact">
-            <input type="text" class="name" id="name" placeholder="Enter name">
-            <input type="text" class="number" id="number" placeholder="Enter number">
-            <button class="done" id="done">Done</button>
-        </div>
-       
+      <div class="create-contact">
+        <input type="text" class="name" id="name" placeholder="Enter name" />
+        <input type="text" class="number" id="number" placeholder="Enter number" />
+        <button class="done" id="done">Done</button>
+      </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

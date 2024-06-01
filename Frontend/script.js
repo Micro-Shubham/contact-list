@@ -1,79 +1,102 @@
-let add = document.getElementById("add");
-let container = document.getElementById("container");
-let nam = document.getElementById("name");
-let mobileNum = document.getElementById("number");
-let submit = document.getElementById("done");
-let form = document.getElementById("create-contact");
+const add = document.getElementById("add");
+const container = document.getElementById("container");
+const nam = document.getElementById("name");
+const mobileNum = document.getElementById("number");
+const submit = document.getElementById("done");
+const overlay = document.querySelector(".overlay");
+const form = document.querySelector(".form");
+const clearInputBtn = document.querySelector(".clear-input");
+const searchBox = document.getElementById("input");
+
 // array for storaing data
+form.addEventListener("click", (event) => {
+    event.stopPropagation();
+});
 let itemList = [];
 // please check the  error in below code
-// add.addEventListener('click', () => {
-//     if(form.style.display ==='none' || form.style.display === ' ') {
-//         form.style.display = 'block'
-//     } else {
-//         form.style.display = 'none';
-//     }
-// })
+add.addEventListener("click", () => {
+    const displayStatus = overlay.style.display;
+    if (displayStatus === "none" || displayStatus === "") {
+        overlay.style.display = "block";
+    } else {
+        overlay.style.display = "none";
+    }
+});
+
+overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
 submit.addEventListener("click", () => {
-  mobileNum.innerHTML = "";
-  let newNam = nam.value;
-  let numb = mobileNum.value;
-  newContact(newNam, numb);
-  nam.value = "";
-  mobileNum.value = "";
+    mobileNum.innerHTML = "";
+    let newNam = nam.value;
+    let numb = mobileNum.value;
+    newContact(newNam, numb);
+    nam.value = "";
+    mobileNum.value = "";
 });
 
 //newContact function
 function newContact(title, id) {
-  let object = {
-    title: title,
-    id: id,
-  };
-  itemList.push(object);
-  sorted(itemList);
+    let object = {
+        title: title,
+        id: id,
+    };
+    itemList.push(object);
+    sorted(itemList);
 }
 
 // sorting all the data
 function sorted(item) {
-  item.sort((a, b) => {
-    let titleA = a.title.toUpperCase();
-    let titleB = b.title.toUpperCase();
-    if (titleA < titleB) {
-      return -1;
-    }
-    if (titleA > titleB) {
-      return 1;
-    }
-    return 0;
-  });
-  render(itemList);
+    item.sort((a, b) => {
+        let titleA = a.title.toUpperCase();
+        let titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+            return -1;
+        }
+        if (titleA > titleB) {
+            return 1;
+        }
+        return 0;
+    });
+    render(itemList);
 }
 
 //rendering the contact list
 function render(list) {
-  let Id = 0;
-  container.innerHTML = "";
-  list.forEach((iter) => {
-    let ptag = document.createElement("p");
-    let pnumber = document.createElement("li");
-    ptag.innerHTML = iter.title;
-    pnumber.innerHTML = iter.id;
-    ptag.id = Id;
-    Id++;
-    container.appendChild(ptag);
-    container.appendChild(pnumber);
-  });
+    //let Id = 0;
+    container.innerHTML = "";
+    let tags = "";
+    list.forEach((iter) => {
+        const tag = ` <div class="card">
+        <div class="card-photo"></div>
+        <div class="card-details">
+          <div class="card-details-name">${iter.title}</div>
+          <div class="card-details-number">${iter.id}</div>
+        </div>
+      </div>`;
+        tags += tag;
+    });
+    container.innerHTML = tags;
 }
 
-//searching contact 
-function  searchTitles () {
-let input = document.getElementById("input").value.toUpperCase();
-const filteredItem = itemList.filter(item =>item.title.toUpperCase().includes(input));
-render(filteredItem);
-  
+//searching contact
+function searchTitles() {
+    let value = searchBox.value.toUpperCase();
+    if (value.length > 0) {
+        clearInputBtn.style.display = "inline";
+    } else {
+        clearInputBtn.style.display = "none";
+    }
+    const filteredItem = itemList.filter((item) =>
+        item.title.toUpperCase().includes(value)
+    );
+    render(filteredItem);
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('input').addEventListener('keyup', searchTitles);
+document.getElementById("input").addEventListener("keyup", () => {
+    searchTitles();
+});
+clearInputBtn.addEventListener("click", () => {
+    searchBox.value = "";
+    clearInputBtn.style.display = "none";
 });
